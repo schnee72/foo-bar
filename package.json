@@ -1,0 +1,18 @@
+{
+  "name": "foo-bar",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/schnee72/foo-bar.git",
+  "author": "Dustin Schnee <schnee72@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "dependencies": {
+    "express": "^4.15.4",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.0"
+  }
+}
