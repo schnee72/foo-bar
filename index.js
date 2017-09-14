@@ -5,6 +5,8 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const compression = require('compression');
 const path = require('path');
+const passport = require('passport');
+const githubStrategy = require('passport-github');
 
 const app = express();
 const port = process.env.PORT || 1337;
