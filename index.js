@@ -44,27 +44,25 @@ passport.deserializeUser(function(obj, done) {
   done(null, obj);
 });
 
-//app.use(express.static(path.join(__dirname, 'client/build')));
-
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.use(express.static(path.join(__dirname, 'client/build/')));
+
 app.get('/api/ping', (req, res) => res.send('pong'));
-app.get('/login', (req, res) => res.send('login'));
+app.get('/auth/error', (req, res) => res.send('error'));
 app.get('/auth/login', passport.authenticate('github'));
-app.get('/api/auth/github', passport.authenticate('github', {
-  failureRedirect: '/login'
+app.get('/api/auth/callback', passport.authenticate('github', {
+  failureRedirect: '/auth/error'
 }), (req, res) => {
   res.redirect('/');
 });
-app.get('/', (req, res) => {
-  res.send(req.isAuthenticated());
+app.get('*', (req, res) => {
+  if (req.isAuthenticated())
+    res.sendFile(path.join(__dirname+'/client/build/index.html'));
+  else
+    res.redirect('/auth/login');
 });
-
-// app.get('*', (req, res) => {
-//   console.log(req.user);
-//   res.sendFile(path.join(__dirname+'/client/build/index.html'));
-// });
 
 app.listen(port, err => {
   if (err)
