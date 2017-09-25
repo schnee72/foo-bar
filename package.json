@@ -99,7 +99,8 @@
       "no-underscore-dangle": 0,
       "no-alert": 0,
       "no-lone-blocks": 0,
-      "jsx-quotes": 1
+      "jsx-quotes": 1,
+      "react/prop-types": 0
     }
   }
 }
