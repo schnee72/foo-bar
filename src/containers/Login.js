@@ -2,8 +2,9 @@ import React from 'react';
 
 const Login = () =>
   <div>
-    <input placeholder="name" />
-    <input type="password" placeholder="password" />
+    <p><input placeholder="name" /></p>
+    <p><input type="password" placeholder="password" /></p>
+    <p><button>Login</button></p>
   </div>;
 
   export default Login;
