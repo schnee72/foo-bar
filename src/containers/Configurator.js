@@ -3,6 +3,11 @@ import React from 'react';
 const Configurator = () =>
   <div>
     <h1>Configurator</h1>
+    <h2>Sites</h2>
+    <select>
+      <option>Site 0</option>
+    </select>
+    <button>New Site</button>
     <p>
       <label>Title</label>
       <input />
