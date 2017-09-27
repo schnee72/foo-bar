@@ -12,6 +12,7 @@ const Configurator = () =>
       <label>Title</label>
       <input />
     </p>
+    <p>something</p>
     <p><button>Add Page</button></p>
     <select>
       <option>Header</option>
