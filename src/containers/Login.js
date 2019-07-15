@@ -1,9 +1,16 @@
 import React from 'react';
 
-const Login = () =>
+const Login = props =>
   <div>
-    <input placeholder="name" />
-    <input type="password" placeholder="password" />
+    <p>
+      <input placeholder="name" />
+    </p>
+    <p>
+      <input type="password" placeholder="password" />
+    </p>
+    <p>
+      <button onClick={() => props.history.push('./configurator')}>Login</button>
+    </p>
   </div>;
 
-  export default Login;
+export default Login;
